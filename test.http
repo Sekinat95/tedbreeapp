@@ -1,0 +1,96 @@
+###
+POST http://localhost:8000/V1/login
+Content-Type: application/json
+
+{
+    "email": "sekinat95@gmail.com",
+    "password": "password"
+}
+
+###
+POST http://localhost:8000/V1/guest/login
+Content-Type: application/json
+
+{
+    "email": "lvon@example.com",
+    "password": "password"
+}
+
+###
+POST http://localhost:8000/V1/guest/jobs
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvVjFcL2d1ZXN0XC9sb2dpbiIsImlhdCI6MTYxNTM3MjY0MCwiZXhwIjoxNjE1NDU5MDQwLCJuYmYiOjE2MTUzNzI2NDAsImp0aSI6IngwRWoydUpwTnBxbU9hZm0iLCJzdWIiOjMsInBydiI6Ijc3ZTM4MDBiMjE0ZGVkNTZkNWRiNDkyYTI0Mzg3ZjJiNTg0Y2Q3YzkifQ._3DFL3N8z7RTEgXdpY2kCAshVaXwwAEvDWjU7F0U8EI"
+}
+
+###
+POST http://localhost:8000/V1/register
+Content-Type: application/json
+
+{
+    "name": "sekinat yahya",
+    "email": "sekinat95@gmail.com",
+    "password": "password",
+    "password_confirmation": "password"
+}
+
+###
+POST http://localhost:8000/V1/my/jobs?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvVjFcL2xvZ2luIiwiaWF0IjoxNjE1MzU3ODE4LCJleHAiOjE2MTU0NDQyMTgsIm5iZiI6MTYxNTM1NzgxOCwianRpIjoicjd3b2Zld0EwYUxkYkp2MiIsInN1YiI6MTEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.6QtMo_m3AI0ahJLPcRGWfA3g1AJX6MEWIEADsb-B9gw
+{
+    "title": "backend engineer ",
+    "description": "go, java, php, python",
+    "location": "abuja, lagos",
+    "category": "Tech",
+    "benefits": "gym, lunch, health insurance",
+    "salary": "600000 NGN",
+    "type": "Permanent",
+    "work_condition": "Remote, on-site"
+}
+
+###
+GET http://localhost:8000/V1/my/jobs
+Content-Type: application/json
+
+{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvVjFcL2xvZ2luIiwiaWF0IjoxNjE1MzczMDI4LCJleHAiOjE2MTU0NTk0MjgsIm5iZiI6MTYxNTM3MzAyOCwianRpIjoiaGUxNnlaaTZIRVRUcVRnMSIsInN1YiI6MTEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.nKZum-AUjhvOl4-S1092VHRslSRfHHgLJA153nva_bU"
+
+}
+###
+PUT http://localhost:8000/api/my/jobs/51?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvVjFcL2xvZ2luIiwiaWF0IjoxNjE1MzU3ODE4LCJleHAiOjE2MTU0NDQyMTgsIm5iZiI6MTYxNTM1NzgxOCwianRpIjoicjd3b2Zld0EwYUxkYkp2MiIsInN1YiI6MTEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.6QtMo_m3AI0ahJLPcRGWfA3g1AJX6MEWIEADsb-B9gw
+Content-Type: application/json
+
+ {
+    "title": "ML engineer ",
+    "description": "react, vue, angular, es6",
+    "location": "yaba, lagos",
+    "category": "Tech",
+    "benefits": "gym, lunch, health insurance",
+    "salary": "600000 NGN",
+    "type": "Permanent",
+    "work_condition": "Remote",
+    "created_by": 2
+  }
+
+
+
+###
+DELETE http://localhost:8000/api/my/jobs/51?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvVjFcL2xvZ2luIiwiaWF0IjoxNjE1MzU3ODE4LCJleHAiOjE2MTU0NDQyMTgsIm5iZiI6MTYxNTM1NzgxOCwianRpIjoicjd3b2Zld0EwYUxkYkp2MiIsInN1YiI6MTEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.6QtMo_m3AI0ahJLPcRGWfA3g1AJX6MEWIEADsb-B9gw
+
+
+###
+POST http://localhost:8000/api/my/jobs?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYxNTIxNTE3NiwiZXhwIjoxNjE1MzAxNTc2LCJuYmYiOjE2MTUyMTUxNzYsImp0aSI6IjNWZHo3OExtZ1hPbGtQZkoiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5KDnRisH2rE721NA0BMmIE4xEb3JS9by6pRyDjot9wQ
+Content-Type: application/json
+
+ {
+    "title": "backend engineer ",
+    "description": "react, vue, angular, es6",
+    "location": "yaba, lagos",
+    "category": "Tech",
+    "benefits": "gym, lunch, health insurance",
+    "salary": "600000 NGN",
+    "type": "Permanent",
+    "work_condition": "On-site",
+    "created_by": 2
+  }
+  
+###
+GET http://localhost:8000/V1/guest/jobs
