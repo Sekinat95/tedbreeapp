@@ -16,10 +16,14 @@ class JobController extends Controller
         //$this->middleware('auth:api');
         $this->user = $this->guard()->user();
     }
+    /**
+     * to list all jobs available regardless of the business owner
+     */
     public function listAll(){
         
         return Job::all();
     }
+
 
     /**
      * Display a listing of the resource.
@@ -44,13 +48,19 @@ class JobController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * show a single job from all jobs.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function show($job_id)
+    {   
+        var_dump($job_id);
+        $singleJob = Job::findorFail($job_id);
+        return response()->json([
+            'status'=>"success",
+            'message'=>"found a job with that id",
+            'job'=>$singleJob,
+        ]);
     }
 
     /**

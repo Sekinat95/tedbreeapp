@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\JobController;
 
+//for business auth
 Route::group([
     'middleware' => ['assign.guard:api'],
     'namespace' => 'App\Http\Controllers',
@@ -27,7 +28,8 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
 });
 
-//to test the new guard and middleware
+//for guest guard and middleware
+//for guest access to jobs list and to apply
 Route::group([
     'middleware' => ['assign.guard:guest'],
     'namespace' => 'App\Http\Controllers',
@@ -45,6 +47,7 @@ Route::group([
 
 });
 
+//for business access to jobs
 Route::group([
     'middleware' => ['assign.guard:api'],
     'namespace' => 'App\Http\Controllers',
