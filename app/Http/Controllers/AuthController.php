@@ -57,6 +57,9 @@ class AuthController extends Controller
     }//end guest login
     
 
+    /**
+     * register method for business
+     */
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
@@ -78,6 +81,9 @@ class AuthController extends Controller
 
     }//end register
 
+    /**
+     * logout method for business
+     */
     public function logout(){
         $this->guard()->logout();
         return response()->json(['message', 'user logged out successfully']);
@@ -91,6 +97,9 @@ class AuthController extends Controller
         return $this->respondWithToken($this->guard()->refresh());
     }//end refresh
 
+    /**
+     * utility function for json response
+     */
     protected function respondWithToken($token){
         return response()->json([
             'token' => $token,
@@ -100,15 +109,7 @@ class AuthController extends Controller
     }
 
     protected function guard(){
-        return Auth::guard();
-        // if($g==="guest"){
-        //     var_dump('in guest');
-        //     var_dump($g);
-        //     return Auth::guard($g);
-        // }else{
-        //     return Auth::guard();
-        // }
-        
+        return Auth::guard(); 
     }
     
 }
