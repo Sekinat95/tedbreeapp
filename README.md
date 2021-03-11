@@ -1,6 +1,8 @@
 ## About My implemeentation
 
-Please use both postman as well as the .http file for testin:
+Please use both postman as well as the .http file for testing:
+business login url:
+
 POST http://localhost:8000/V1/login
 Content-Type: application/json
 
@@ -9,7 +11,7 @@ Content-Type: application/json
 "password": "password"
 }
 
-###
+guest login url:
 
 POST http://localhost:8000/V1/guest/login
 Content-Type: application/json
@@ -19,4 +21,9 @@ Content-Type: application/json
 "password": "password"
 }
 
-## Learning Laravel
+## Other information
+
+I have answered all questions save for the following two:
+
+-   guest post an application for a job
+-   business sees all applications for each of their jobs
